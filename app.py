@@ -86,6 +86,3 @@ def get_json_data():
             content={"error": str(e)},
             status_code=500
         )
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=8000)
