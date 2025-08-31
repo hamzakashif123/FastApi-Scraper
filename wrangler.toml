@@ -1,6 +1,14 @@
 name = "fastapi-scraper"
-main = "src/worker.js"
 compatibility_date = "2025-08-31"
 
+[site]
+bucket = "./public"
+
 [build]
-command = "pip install -r requirements.txt"
+command = "pip install -r requirements.txt && uvicorn app:app --host 0.0.0.0 --port 8080"
+
+[build.upload]
+format = "service-worker"
+
+[pages_build_output_dir]
+value = "public"
